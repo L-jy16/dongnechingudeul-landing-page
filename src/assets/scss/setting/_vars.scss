@@ -1,0 +1,55 @@
+/** @format */
+
+:root {
+  --mainKo-font: "TwayNalda";
+  --mainEn-font: "PPRader";
+  --mainSub-font2: "Cafe24SsurroundAir";
+  --mainSub-font3: "GmarketSans";
+  --mainSub-font4: "Juache";
+
+  --main-bg: #f4f5f7;
+  --font-color: #333;
+
+  --white: #ffffff;
+  --white100: #e8e8e8;
+  --white200: #d4d4d4;
+  --white300: #c1c1c1;
+  --white400: #6b6b6b;
+  --white500: #333333;
+  --white600: #00000000;
+
+  --black: #000;
+  --black100: #1d1d1d; /* 가장 어두움 */
+  --black200: #242424;
+  --black300: #3d3d3d;
+  --black400: #414141;
+  --black500: #575e67;
+  --black600: #6b6b6b;
+  --black700: #6c757d;
+  --black800: #9aa3ad;
+  --black900: #b4b4b4;
+  --black1000: #d4d4d4;
+  --black1100: rgba(0, 0, 0, 0.2); //투명
+
+  --yellow: #fbcc5d;
+  --yellow200: #fefbe8;
+
+  --font_color1: #283d6b;
+  --font_color2: #17244f;
+
+  /* 폰트를 부드럽게 렌더링하기 위한 속성  */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* 아이폰 가로 모드에서 글씨 확대 금지 */
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (max-width: 800px) {
+  :root {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
