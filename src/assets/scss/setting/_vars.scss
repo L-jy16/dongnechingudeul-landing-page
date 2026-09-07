@@ -1,11 +1,10 @@
 /** @format */
 
 :root {
-  --mainKo-font: "TwayNalda";
-  --mainEn-font: "PPRader";
-  --mainSub-font2: "Cafe24SsurroundAir";
-  --mainSub-font3: "GmarketSans";
-  --mainSub-font4: "Juache";
+  --mainKo-font: "Paperozi";
+  --mainSub-font: "YeogiOttaeJalnan";
+  --mainSub-font2: "Pretendard";
+  --mainSub-font3: "Juache";
 
   --main-bg: #f4f5f7;
   --font-color: #333;
@@ -33,9 +32,15 @@
 
   --yellow: #fbcc5d;
   --yellow200: #fefbe8;
+  --yellow300: #ecedb7;
 
   --font_color1: #283d6b;
   --font_color2: #17244f;
+  --font_color3: #4388f5;
+  --font_color4: #000668;
+  --font_color5: #28b8f5;
+  --font_color6: #81b5fc;
+  --font_color7: #3066c5;
 
   /* 폰트를 부드럽게 렌더링하기 위한 속성  */
   font-synthesis: none;

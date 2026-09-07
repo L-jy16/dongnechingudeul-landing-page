@@ -1,1 +1,180 @@
 /** @format */
+
+#userservice {
+  width: 100%;
+  height: 141.02vh;
+  background-image: url(../../image/UserServiceBackGround.png);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding: 5%;
+
+  .userservice__wrap {
+    margin-top: 18%;
+
+    h2 {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 16rem;
+      margin-bottom: 1rem;
+      font-size: 0;
+      font-family: var(--mainSub-font);
+      color: var(--font_color2);
+      background-image: url(../../image/userservice_Title.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      span {
+        display: block;
+        width: 3.5rem;
+        height: 3rem;
+        background-image: url(../../image/StarIcon1.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .userservice__content__wrap {
+      width: 100%;
+
+      .btn__wrap {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        button {
+          position: relative;
+          width: 32%;
+          height: 7rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--font_color2);
+          background: none;
+          background-image: url(../../image/NormalButton.png);
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          font-family: var(--mainSub-font);
+          font-size: 2rem;
+          cursor: pointer;
+          transition: transform 0.2s ease, opacity 0.2s ease;
+
+          span {
+            display: block;
+            width: 1.2rem;
+            height: 1.2rem;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+
+          &:hover {
+            transform: translateY(-0.2rem);
+          }
+
+          &.active {
+            color: var(--white);
+            background-image: url(../../image/ActiveButton.png);
+
+            span {
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+      }
+
+      .slider__wrap {
+        position: relative;
+        width: 100%;
+
+        .userserviceSwiper {
+          width: 100%;
+          overflow: hidden;
+
+          .swiper-wrapper {
+            align-items: center;
+          }
+
+          .swiper-slide {
+            width: 100%;
+          }
+        }
+
+        .img__wrap {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+
+          img {
+            display: block;
+            width: 90%;
+            height: auto;
+            object-fit: contain;
+
+            &.slider {
+              width: 90%;
+            }
+
+            &.step {
+              width: 82%;
+              margin-top: 2rem;
+            }
+          }
+        }
+
+        .userservice-prev,
+        .userservice-next {
+          position: absolute;
+          top: 32%;
+          width: 4.5rem;
+          height: 4.5rem;
+          border: 0;
+          padding: 0;
+          background-color: transparent;
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          cursor: pointer;
+          z-index: 20;
+          transform: translateY(-50%);
+          transition: transform 0.2s ease, opacity 0.2s ease;
+
+          &:hover {
+            transform: translateY(-50%) scale(1.1);
+          }
+
+          &.swiper-button-disabled {
+            opacity: 0.35;
+            cursor: default;
+          }
+        }
+
+        .userservice-prev {
+          left: 0;
+          background-image: url("../../image/SliderLeft.png");
+        }
+
+        .userservice-next {
+          right: 0;
+          background-image: url("../../image/SliderRight.png");
+        }
+
+        .swiper-button-disabled {
+          opacity: 0.3;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

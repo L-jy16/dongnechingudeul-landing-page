@@ -17,34 +17,34 @@ const Header = (props) => {
         <div className="header__menu">
           <ul>
             <li>
-              <Link className="menu" to="/">
+              <a className="menu" href="#banner">
                 홈
-              </Link>
+              </a>
             </li>
-            <li>
-              <Link className="menu" to="/">
+            {/* <li>
+              <a  className="menu"  href="#banner">
                 소개
-              </Link>
-            </li>
+              </a>
+            </li> */}
             <li>
-              <Link className="menu" to="/">
+              <a className="menu" href="#userservice">
                 이용 방법
-              </Link>
+              </a>
             </li>
             <li>
-              <Link className="menu" to="/">
+              <a className="menu" href="#promotion">
                 스토리
-              </Link>
+              </a>
             </li>
             <li>
-              <Link className="menu" to="/">
+              <a className="menu" href="#ownerservice">
                 굿즈샵
-              </Link>
+              </a>
             </li>
             <li>
-              <Link className="menu" to="/">
+              <a className="menu" href="#businessmodel">
                 덕질 라이프
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

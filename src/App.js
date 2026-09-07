@@ -1,7 +1,9 @@
 /** @format */
 
-import React from "react";
+import React, { useEffect } from "react";
 import "./assets/scss/style.scss";
+import { smooth } from "./utils/smooth";
+import { link } from "./utils/link";
 
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -15,6 +17,10 @@ import OwnerService from "./components/OwnerService";
 import BusinessModel from "./components/BusinessModel";
 
 const App = () => {
+  useEffect(() => {
+    smooth();
+    link();
+  });
   return (
     <>
       <Header />

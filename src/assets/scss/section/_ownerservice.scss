@@ -1,0 +1,58 @@
+/** @format */
+
+#ownerservice {
+  width: 100%;
+  height: 128.52vh;
+  background-image: url(../../image/OwnerServiceBackGround.png);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding: 5% 3%;
+
+  .text__wrap {
+    text-align: center;
+    color: var(--white);
+
+    .title {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      font-family: var(--mainSub-font);
+      h3 {
+        font-size: 3.3rem;
+        span {
+          display: inline-block;
+          transform: skewX(-10deg);
+          color: var(--yellow300);
+          margin-right: 0.5rem;
+        }
+      }
+      .staricon {
+        width: 10rem;
+        height: 10rem;
+        background-image: url(../../image/StarIcon2.png);
+        background-size: contain;
+        background-position: top center;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .desc {
+      font-size: 1.2rem;
+      font-family: var(--mainSub-font2);
+    }
+  }
+
+  .img__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+
+    img {
+      width: 50%;
+    }
+  }
+}
