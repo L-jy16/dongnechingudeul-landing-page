@@ -67,11 +67,27 @@
 
           span {
             display: block;
-            width: 1.2rem;
-            height: 1.2rem;
+            width: 5rem;
+            height: 5rem;
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
+          }
+
+          &.goods_find {
+            span {
+              background-image: url(../../image/GoodsIcon.png);
+            }
+          }
+          &.AR {
+            span {
+              background-image: url(../../image/ARIcon.png);
+            }
+          }
+          &.guild {
+            span {
+              background-image: url(../../image/GuildIcon.png);
+            }
           }
 
           &:hover {
@@ -86,6 +102,22 @@
               background-size: contain;
               background-position: center;
               background-repeat: no-repeat;
+            }
+
+            &.goods_find {
+              span {
+                background-image: url(../../image/ActiveGoodsIcon.png);
+              }
+            }
+            &.AR {
+              span {
+                background-image: url(../../image/ActiveARIcon.png);
+              }
+            }
+            &.guild {
+              span {
+                background-image: url(../../image/ActiveGuildIcon.png);
+              }
             }
           }
         }

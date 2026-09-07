@@ -1,7 +1,6 @@
 /** @format */
 
 import React from "react";
-import interview from "../assets/video/Interview.mp4";
 
 const Promotion = () => {
   return (
@@ -10,7 +9,13 @@ const Promotion = () => {
       <div className="video__wrap">
         <div className="video">
           <div className="video__screen">
-            <video src={interview} muted playsInline controls />
+            <iframe
+              src="https://drive.google.com/file/d/1qiaXrvvncf5fDrgS15K4j8W34cuXxpdd/preview"
+              width="100%"
+              height="100%"
+              allow="autoplay"
+              title="Interview Video"
+            />
           </div>
 
           <div className="video__frame" />
