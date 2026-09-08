@@ -2,7 +2,7 @@
 
 import React from "react";
 import procedure from "../assets/image/ShopProcedure.png";
-import shop_admin_view from "../assets/image/ShopAdminPage.png";
+import shop_admin_view from "../assets/image/ShopAdminPage2.png";
 
 const OwnerService = () => {
   return (
