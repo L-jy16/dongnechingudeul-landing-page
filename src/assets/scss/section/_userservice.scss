@@ -147,6 +147,47 @@
           align-items: center;
           justify-content: center;
           padding: 1rem;
+          position: relative;
+
+          .slider__wrap {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            position: absolute;
+            top: 15%;
+            left: 10%;
+
+            .icon {
+              width: 13%;
+            }
+
+            .text__wrap {
+              h3 {
+                font-family: var(--font_color4);
+                color: var(--white);
+                font-weight: 800;
+                font-size: 2.5rem;
+
+                strong {
+                  font-family: var(--font_color4);
+                  color: var(--yellow400);
+                  font-weight: 800;
+                }
+
+                text-shadow: -2px -2px 0 #4285e8, 2px -2px 0 #4285e8,
+                  -2px 2px 0 #4285e8, 2px 2px 0 #4285e8,
+                  0px 3px 5px rgba(20, 95, 210, 0.7);
+              }
+              span {
+                font-size: 1.1rem;
+                color: var(--white);
+
+                text-shadow: -2px -2px 0 #4285e8, 2px -2px 0 #4285e8,
+                  -2px 2px 0 #4285e8, 2px 2px 0 #4285e8,
+                  0px 3px 5px rgba(20, 95, 210, 0.7);
+              }
+            }
+          }
 
           img {
             display: block;

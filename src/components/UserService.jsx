@@ -9,13 +9,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import goods_find from "../assets/image/userservice_goods.png";
+import goods_icon from "../assets/image/SliderIcon1.png";
 import goods_step from "../assets/image/userservice_step_goods.png";
 
-// 나중에 실제 이미지로 교체
 import ar_find from "../assets/image/userservice_AR.png";
+import ar_icon from "../assets/image/SliderIcon3.png";
 import ar_step from "../assets/image/userservice_step_AR.png";
 
 import guild_find from "../assets/image/userservice_guild.png";
+import guild_icon from "../assets/image/SliderIcon2.png";
 import guild_step from "../assets/image/userservice_step_guild.png";
 
 const UserService = () => {
@@ -86,6 +88,25 @@ const UserService = () => {
               <SwiperSlide>
                 <div className="img__wrap">
                   <img className="slider" src={goods_find} alt="굿즈 찾기" />
+                  <div className="slider__wrap">
+                    <img
+                      className="icon icon01"
+                      src={goods_icon}
+                      alt="굿즈 찾기"
+                    />
+                    <div className="text__wrap">
+                      <h3 className="title">
+                        <strong>AI로 더 빠르게,</strong>
+                        <br />
+                        원하는 굿즈를 찾아보세요.
+                      </h3>
+                      <span className="desc">
+                        사진이나 키워드로 굿즈를 검색하고
+                        <br />내 주변에서 만날 수 있는 굿즈샵까지 확인할 수
+                        있어요.
+                      </span>
+                    </div>
+                  </div>
 
                   <img
                     className="step"
@@ -99,6 +120,25 @@ const UserService = () => {
               <SwiperSlide>
                 <div className="img__wrap">
                   <img className="slider" src={ar_find} alt="AR 탐험" />
+                  <div className="slider__wrap">
+                    <img
+                      className="icon icon02"
+                      src={ar_icon}
+                      alt="굿즈 찾기"
+                    />
+                    <div className="text__wrap">
+                      <h3 className="title">
+                        <strong>AI로 더 빠르게,</strong>
+                        <br />
+                        동네를 탐험해보세요.
+                      </h3>
+                      <span className="desc">
+                        내 주변 굿즈샵을 AR 길찾기로
+                        <br />
+                        쉽고 재미있게 찾아갈 수 있어요
+                      </span>
+                    </div>
+                  </div>
 
                   <img className="step" src={ar_step} alt="AR 탐험 이용 단계" />
                 </div>
@@ -108,6 +148,25 @@ const UserService = () => {
               <SwiperSlide>
                 <div className="img__wrap">
                   <img className="slider" src={guild_find} alt="굿즈 사무소" />
+                  <div className="slider__wrap">
+                    <img
+                      className="icon icon03"
+                      src={guild_icon}
+                      alt="굿즈 찾기"
+                    />
+                    <div className="text__wrap">
+                      <h3 className="title">
+                        <strong>굿즈 사무소에</strong> 굿즈를 등록하고
+                        <br />
+                        나만의 컬렉션을 완성해보세요.
+                      </h3>
+                      <span className="desc">
+                        다른 유저의 사무소를 둘러보다
+                        <br />
+                        원하는 굿즈가 있으면 교환할 수 있어요.
+                      </span>
+                    </div>
+                  </div>
 
                   <img
                     className="step"
