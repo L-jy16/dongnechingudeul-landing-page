@@ -61,7 +61,7 @@ const UserService = () => {
               onClick={() => moveSlide(2)}
             >
               <span />
-              굿즈 사무소
+              덕질 사무소
             </button>
           </div>
 
@@ -144,10 +144,10 @@ const UserService = () => {
                 </div>
               </SwiperSlide>
 
-              {/* 03 굿즈 사무소 */}
+              {/* 03 덕질 사무소 */}
               <SwiperSlide>
                 <div className="img__wrap">
-                  <img className="slider" src={guild_find} alt="굿즈 사무소" />
+                  <img className="slider" src={guild_find} alt="덕질 사무소" />
                   <div className="slider__wrap">
                     <img
                       className="icon icon03"
@@ -156,7 +156,7 @@ const UserService = () => {
                     />
                     <div className="text__wrap">
                       <h3 className="title">
-                        <strong>굿즈 사무소에</strong> 굿즈를 등록하고
+                        <strong>덕질 사무소에</strong> 굿즈를 등록하고
                         <br />
                         나만의 컬렉션을 완성해보세요.
                       </h3>
@@ -171,7 +171,7 @@ const UserService = () => {
                   <img
                     className="step"
                     src={guild_step}
-                    alt="굿즈 사무소 이용 단계"
+                    alt="덕질 사무소 이용 단계"
                   />
                 </div>
               </SwiperSlide>
