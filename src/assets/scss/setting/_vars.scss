@@ -1,6 +1,11 @@
 /** @format */
 
 :root {
+  --section-space: clamp(48px, 6vw, 88px);
+  --section-title: clamp(28px, 3.4vw, 48px);
+  --section-body: clamp(16px, 1.4vw, 20px);
+  --section-width: 1280px;
+
   --mainKo-font: "Paperozi";
   --mainSub-font: "YeogiOttaeJalnan";
   --mainSub-font2: "Pretendard";
@@ -55,7 +60,6 @@
 
 @media (max-width: 800px) {
   :root {
-    font-size: 14px;
     line-height: 1.4;
   }
 }

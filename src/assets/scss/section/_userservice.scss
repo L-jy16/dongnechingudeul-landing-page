@@ -1,615 +1,304 @@
 /** @format */
 
 #userservice {
+  @include continuous-scene(#dab4aa, #faf7eb);
+  --scene-image: url(../../image/UserServiceBackGround.png);
+  --scene-position: center bottom;
+  --scene-size: 100% 125%;
   width: 100%;
-  height: 141.02vh;
-  background-image: url(../../image/UserServiceBackGround.png);
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  padding: 5%;
+  padding: clamp(40px, 6vw, 88px) 5%;
 
   .userservice__wrap {
-    margin-top: 14%;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
 
     h2 {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      width: 16rem;
-      margin-bottom: 1rem;
+      position: relative;
+      width: clamp(210px, 27vw, 320px);
+      aspect-ratio: 3.6;
+      margin: 0 0 24px;
       font-size: 0;
-      font-family: var(--mainSub-font);
-      color: var(--font_color2);
-      background-image: url(../../image/userservice_Title.png);
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
+      background: url(../../image/userservice_Title.png) right center / 80% auto no-repeat;
 
       span {
-        display: block;
-        width: 3.5rem;
-        height: 3rem;
-        background-image: url(../../image/StarIcon1.png);
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-    }
-
-    .userservice__content__wrap {
-      width: 100%;
-
-      .btn__wrap {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-
-        button {
-          position: relative;
-          width: 32%;
-          height: 5rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: var(--font_color2);
-          background: none;
-          background-image: url(../../image/NormalButton.png);
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
-          font-family: var(--mainSub-font);
-          font-size: 1.8rem;
-          cursor: pointer;
-          transition: transform 0.2s ease, opacity 0.2s ease;
-
-          span {
-            display: block;
-            width: 3.3rem;
-            height: 3.3rem;
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-          }
-
-          &.goods_find {
-            span {
-              background-image: url(../../image/GoodsIcon.png);
-            }
-          }
-          &.AR {
-            span {
-              background-image: url(../../image/ARIcon.png);
-            }
-          }
-          &.guild {
-            span {
-              background-image: url(../../image/GuildIcon.png);
-            }
-          }
-
-          &:hover {
-            transform: translateY(-0.2rem);
-          }
-
-          &.active {
-            color: var(--white);
-            background-image: url(../../image/ActiveButton.png);
-
-            span {
-              background-size: contain;
-              background-position: center;
-              background-repeat: no-repeat;
-            }
-
-            &.goods_find {
-              span {
-                background-image: url(../../image/ActiveGoodsIcon.png);
-              }
-            }
-            &.AR {
-              span {
-                background-image: url(../../image/ActiveARIcon.png);
-              }
-            }
-            &.guild {
-              span {
-                background-image: url(../../image/ActiveGuildIcon.png);
-              }
-            }
-          }
-        }
-      }
-
-      .slider__wrap {
-        position: relative;
-        width: 100%;
-
-        .userserviceSwiper {
-          width: 100%;
-          overflow: hidden;
-
-          .swiper-wrapper {
-            align-items: center;
-          }
-
-          .swiper-slide {
-            width: 100%;
-          }
-        }
-
-        .img__wrap {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          padding: 1rem;
-          position: relative;
-
-          .slider__wrap {
-            display: flex;
-            align-items: center;
-            align-content: center;
-            position: absolute;
-            top: 15%;
-            left: 10%;
-
-            .icon {
-              width: 13%;
-            }
-
-            .text__wrap {
-              h3 {
-                font-family: var(--font_color4);
-                color: var(--white);
-                font-weight: 800;
-                font-size: 2.5rem;
-
-                strong {
-                  font-family: var(--font_color4);
-                  color: var(--yellow400);
-                  font-weight: 800;
-                }
-
-                text-shadow: -2px -2px 0 #4285e8, 2px -2px 0 #4285e8,
-                  -2px 2px 0 #4285e8, 2px 2px 0 #4285e8,
-                  0px 3px 5px rgba(20, 95, 210, 0.7);
-              }
-              span {
-                font-size: 1.1rem;
-                color: var(--white);
-
-                text-shadow: -2px -2px 0 #4285e8, 2px -2px 0 #4285e8,
-                  -2px 2px 0 #4285e8, 2px 2px 0 #4285e8,
-                  0px 3px 5px rgba(20, 95, 210, 0.7);
-              }
-            }
-          }
-
-          img {
-            display: block;
-            width: 90%;
-            height: auto;
-            object-fit: contain;
-
-            &.slider {
-              width: 90%;
-            }
-
-            &.step {
-              width: 82%;
-              margin-top: 2rem;
-            }
-          }
-        }
-
-        .userservice-prev,
-        .userservice-next {
-          position: absolute;
-          top: 32%;
-          width: 4.5rem;
-          height: 4.5rem;
-          border: 0;
-          padding: 0;
-          background-color: transparent;
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
-          cursor: pointer;
-          z-index: 20;
-          transform: translateY(-50%);
-          transition: transform 0.2s ease, opacity 0.2s ease;
-
-          &:hover {
-            transform: translateY(-50%) scale(1.1);
-          }
-
-          &.swiper-button-disabled {
-            opacity: 0.35;
-            cursor: default;
-          }
-        }
-
-        .userservice-prev {
-          left: 0;
-          background-image: url("../../image/SliderLeft.png");
-        }
-
-        .userservice-next {
-          right: 0;
-          background-image: url("../../image/SliderRight.png");
-        }
-
-        .swiper-button-disabled {
-          opacity: 0.3;
-          pointer-events: none;
-        }
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 20%;
+        background: url(../../image/StarIcon1.png) center / contain no-repeat;
       }
     }
   }
-}
 
-@media (max-width: 1024px) {
-  #userservice {
-    height: auto;
-    min-height: 100vh;
-    padding: 5% 4% 8%;
+  .btn__wrap {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 28px;
 
-    .userservice__wrap {
-      margin-top: 12%;
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 52px;
+      aspect-ratio: 4.1;
+      padding: 8px 12px;
+      background: url(../../image/NormalButton.png) center / 100% 100% no-repeat;
+      color: var(--font_color2);
+      font-family: var(--mainSub-font);
+      font-size: clamp(18px, 2.4vw, 30px);
+      line-height: 1.2;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: transform 0.2s;
 
-      h2 {
-        // width: 14rem;
-        // margin-bottom: 1rem;
+      > span {
+        flex: 0 0 auto;
+        width: clamp(28px, 3.4vw, 44px);
+        aspect-ratio: 1;
+        background: center / contain no-repeat;
       }
 
-      .userservice__content__wrap {
-        .btn__wrap {
-          gap: 1%;
+      &.goods_find > span { background-image: url(../../image/GoodsIcon.png); }
+      &.AR > span { background-image: url(../../image/ARIcon.png); }
+      &.guild > span { background-image: url(../../image/GuildIcon.png); }
 
-          button {
-            width: 32%;
-            height: 4.5rem;
-            font-size: 1.5rem;
+      &.active {
+        color: white;
+        background-image: url(../../image/ActiveButton.png);
+        &.goods_find > span { background-image: url(../../image/ActiveGoodsIcon.png); }
+        &.AR > span { background-image: url(../../image/ActiveARIcon.png); }
+        &.guild > span { background-image: url(../../image/ActiveGuildIcon.png); }
+      }
+    }
+  }
 
-            span {
-              width: 2.8rem;
-              height: 2.8rem;
-            }
-          }
+  .service-slider {
+    position: relative;
+    width: 100%;
+    container-type: inline-size;
+    --visual-height: 27.29473cqw;
+
+    .userserviceSwiper { width: 100%; overflow: hidden; }
+    .swiper-wrapper { align-items: flex-start; }
+    .img__wrap { width: 100%; }
+  }
+
+  .service-visual {
+    position: relative;
+    container-type: inline-size;
+    width: 92%;
+    aspect-ratio: 1537 / 456;
+    margin: 0 auto;
+
+    > img.slider {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  // Keep copy inside the clear sky, to the left of the phone artwork.
+  .service-copy {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 2cqw;
+    width: 56%;
+    color: white;
+    font-family: var(--mainSub-font2);
+    text-shadow: -1px -1px 0 #4285e8, 1px 1px 0 #4285e8, 0 2px 3px #145fd2aa;
+
+    > img.icon {
+      display: block;
+      width: 20%;
+      height: auto;
+      flex: 0 0 20%;
+      object-fit: contain;
+    }
+
+    .text__wrap { min-width: 0; flex: 1; }
+    h3 {
+      font-size: clamp(17px, 2.8cqw, 34px);
+      font-weight: 800;
+      line-height: 1.35;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+      strong { color: var(--yellow400); font-weight: inherit; }
+    }
+    .desc {
+      display: block;
+      margin-top: 10px;
+      font-size: clamp(14px, 1.65cqw, 20px);
+      line-height: 1.5;
+      word-break: keep-all;
+    }
+  }
+
+  img.step {
+    display: block;
+    width: 94%;
+    height: auto;
+    margin: 44px auto 0;
+  }
+
+  .userservice-prev, .userservice-next {
+    position: absolute;
+    top: 13.647365cqw;
+    z-index: 5;
+    width: clamp(36px, 5cqw, 60px);
+    aspect-ratio: 1;
+    transform: translateY(-50%);
+    background: center / contain no-repeat;
+    font-size: 0;
+    cursor: pointer;
+
+    &.swiper-button-disabled { opacity: 0.4; cursor: default; }
+  }
+  .userservice-prev { left: 0; background-image: url(../../image/SliderLeft.png); }
+  .userservice-next { right: 0; background-image: url(../../image/SliderRight.png); }
+  .swiper-pagination { top: calc(var(--visual-height) + 12px); bottom: auto; height: 12px; }
+  .swiper-pagination-bullet { background: #049fff; }
+  .service-steps { display: none; }
+}
+
+@media (max-width: 900px) and (min-width: 601px) {
+  #userservice .service-copy {
+    gap: 1.2cqw;
+    h3 { font-size: clamp(16px, 2.8cqw, 24px); }
+    .desc { font-size: 13px; margin-top: 6px; line-height: 1.4; }
+  }
+}
+
+@media (max-width: 600px) {
+  #userservice {
+    padding: 32px 5% 40px;
+
+    .userservice__wrap { max-width: 440px; }
+    .userservice__wrap h2 {
+      width: clamp(190px, 51vw, 225px);
+      max-width: 70%;
+      margin-bottom: 18px;
+    }
+
+    .btn__wrap {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 6px;
+      width: 88%;
+      margin: 0 auto 22px;
+
+      button {
+        aspect-ratio: 6.7;
+        min-height: 44px;
+        font-size: 20px;
+        padding: 6px 12px;
+        > span { width: 28px; }
+      }
+    }
+
+    .service-visual {
+      width: 100%;
+      aspect-ratio: 2.4;
+      border: 3px solid white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px #399ae536;
+
+      > img.slider { object-fit: cover; object-position: 40% center; }
+    }
+
+    .service-copy {
+      gap: 1.5cqw;
+      h3 { font-size: clamp(14px, 4.35cqw, 19px); line-height: 1.35; }
+      .desc { display: none; }
+    }
+
+    .service-slider { --visual-height: 41.666667cqw; }
+    img.step { display: none; }
+    .userservice-prev, .userservice-next {
+      top: 20.833333cqw;
+      width: 36px;
+    }
+    .userservice-prev { left: -12px; }
+    .userservice-next { right: -12px; }
+    .swiper-pagination { top: calc(var(--visual-height) + 10px); }
+
+    .service-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      width: 96%;
+      margin: 42px auto 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        position: relative;
+        display: grid;
+        grid-template-columns: 30px 64px minmax(0, 1fr);
+        align-items: center;
+        gap: 8px;
+        min-height: 68px;
+        padding: 2px 12px;
+        border: 2px solid #ffdf88;
+        border-radius: 40px;
+        background: linear-gradient(#fffef2, #fff7d5);
+        box-shadow: inset 0 0 0 2px white, 0 3px 4px #cc921b33;
+
+        &:not(:last-child)::after {
+          content: "↓";
+          position: absolute;
+          top: calc(100% + 1px);
+          left: 28%;
+          color: #ff9700;
+          font-size: 22px;
+          font-weight: 900;
+          line-height: 18px;
         }
+      }
 
-        .slider__wrap {
-          .img__wrap {
-            padding: 0.8rem;
+      .step-number {
+        display: grid;
+        place-items: center;
+        width: 30px;
+        aspect-ratio: 1;
+        border: 2px solid #ffd43b;
+        border-radius: 50%;
+        background: white;
+        color: #ba1800;
+        font-size: 24px;
+        font-weight: 900;
+      }
 
-            .slider__wrap {
-              top: 15%;
-              left: 9%;
-
-              .icon {
-                width: 12%;
-              }
-
-              .text__wrap {
-                h3 {
-                  font-size: 2rem;
-                }
-
-                span {
-                  font-size: 0.95rem;
-                }
-              }
-            }
-
-            img {
-              width: 92%;
-
-              &.slider {
-                width: 92%;
-              }
-
-              &.step {
-                width: 88%;
-                margin-top: 1.5rem;
-              }
-            }
-          }
-
-          .userservice-prev,
-          .userservice-next {
-            width: 3.8rem;
-            height: 3.8rem;
-            top: 32%;
-          }
+      .step-art {
+        width: 64px;
+        aspect-ratio: 1;
+        > span {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: url(../../image/userservice-step-icons-v2.png) no-repeat;
+          background-size: 400% 300%;
         }
+      }
+
+      .step-label {
+        color: #a51a08;
+        font-family: var(--mainSub-font);
+        font-size: clamp(15px, 4.5cqw, 19px);
+        line-height: 1.4;
+        word-break: keep-all;
       }
     }
   }
 }
 
 @media (max-width: 800px) {
-  #userservice {
-    height: auto;
-    min-height: 100vh;
-
-    padding: 6% 4% 10%;
-
-    background-size: cover;
-    background-position: 70% center;
-
-    .userservice__wrap {
-      margin-top: 10%;
-
-      h2 {
-        // width: 12rem;
-        // height: 3rem;
-        // margin-bottom: 1rem;
-
-        // span {
-        //   width: 2.8rem;
-        //   height: 2.5rem;
-        // }
-      }
-
-      .userservice__content__wrap {
-        .btn__wrap {
-          width: 100%;
-          gap: 0.7rem;
-
-          button {
-            width: calc(33.333% - 0.5rem);
-            height: 4rem;
-
-            font-size: 1.2rem;
-
-            span {
-              width: 2.4rem;
-              height: 2.4rem;
-            }
-          }
-        }
-
-        .slider__wrap {
-          margin-top: 0.5rem;
-
-          .img__wrap {
-            width: 100%;
-            padding: 0.5rem;
-
-            .slider__wrap {
-              top: 14%;
-              left: 8%;
-
-              width: 65%;
-
-              .icon {
-                width: 15%;
-                flex-shrink: 0;
-              }
-
-              .text__wrap {
-                h3 {
-                  font-size: 1.7rem;
-                  line-height: 1.25;
-                }
-
-                span {
-                  display: block;
-                  font-size: 0.85rem;
-                  line-height: 1.5;
-                }
-              }
-            }
-
-            img {
-              width: 95%;
-
-              &.slider {
-                width: 95%;
-              }
-
-              &.step {
-                width: 92%;
-                margin-top: 1.2rem;
-              }
-            }
-          }
-
-          .userservice-prev,
-          .userservice-next {
-            width: 3rem;
-            height: 3rem;
-
-            top: 31%;
-          }
-
-          .userservice-prev {
-            left: -0.5rem;
-          }
-
-          .userservice-next {
-            right: -0.5rem;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 500px) {
-  #userservice {
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
-
-    padding: 3rem 1rem 5rem;
-
-    background-size: cover;
-    background-position: top center;
-
-    &::before {
-      content: "";
-      position: absolute;
-
-      top: 0;
-      left: 0;
-
-      width: 100%;
-      height: 12rem;
-
-      background: linear-gradient(
-        to bottom,
-        rgba(247, 198, 170, 0.35) 0%,
-        rgba(247, 210, 190, 0.18) 35%,
-        rgba(255, 255, 255, 0) 100%
-      );
-
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .userservice__wrap {
-      position: relative;
-      z-index: 1;
-      margin-top: 14%;
-    }
-
-    .userservice__wrap {
-      width: 100%;
-      margin-top: 0;
-
-      h2 {
-        width: 13rem;
-        height: 2.8rem;
-
-        margin-bottom: 1rem;
-
-        // background-position: left center;
-
-        span {
-          width: 2.2rem;
-          height: 2.2rem;
-        }
-      }
-
-      .userservice__content__wrap {
-        .btn__wrap {
-          width: 100%;
-
-          display: flex;
-          flex-direction: column;
-          flex-wrap: nowrap;
-
-          gap: 0.4rem;
-
-          button {
-            width: 70%;
-            min-width: 18rem;
-            height: 4rem;
-            font-size: 1.3rem;
-
-            background-size: 100% 100%;
-
-            span {
-              width: 2rem;
-              height: 2rem;
-              margin-right: 0.5rem;
-            }
-
-            &:hover {
-              transform: none;
-            }
-          }
-        }
-
-        .slider__wrap {
-          width: 100%;
-          margin-top: 1rem;
-
-          .userserviceSwiper {
-            width: 100%;
-          }
-
-          .img__wrap {
-            width: 100%;
-            padding: 0;
-
-            /* 슬라이더 위 글씨 */
-            .slider__wrap {
-              top: 10%;
-              left: 7%;
-
-              width: 60%;
-
-              align-items: flex-start;
-
-              .icon {
-                width: 18%;
-                margin-right: 0.3rem;
-              }
-
-              .text__wrap {
-                h3 {
-                  font-size: 1.25rem;
-                  line-height: 1.25;
-
-                  text-shadow: -1px -1px 0 #4285e8, 1px -1px 0 #4285e8,
-                    -1px 1px 0 #4285e8, 1px 1px 0 #4285e8,
-                    0 2px 3px rgba(20, 95, 210, 0.6);
-                }
-
-                span {
-                  display: block;
-
-                  margin-top: 0.3rem;
-
-                  font-size: 0.65rem;
-                  line-height: 1.4;
-
-                  text-shadow: -1px -1px 0 #4285e8, 1px -1px 0 #4285e8,
-                    -1px 1px 0 #4285e8, 1px 1px 0 #4285e8;
-                }
-              }
-            }
-
-            /* 메인 슬라이드 */
-            img {
-              width: 100%;
-
-              &.slider {
-                width: 100%;
-              }
-
-              /* STEP 이미지 */
-              &.step {
-                width: 100%;
-                margin-top: 1.5rem;
-              }
-            }
-          }
-
-          .userservice-prev,
-          .userservice-next {
-            display: none;
-            // width: 2.5rem;
-            // height: 2.5rem;
-
-            // top: 25%;
-          }
-
-          // .userservice-prev {
-          //   left: -0.8rem;
-          // }
-
-          // .userservice-next {
-          //   right: -0.8rem;
-          // }
-        }
-      }
-    }
-  }
+  #userservice { background: linear-gradient(#c7dff3, #faf7eb); }
 }

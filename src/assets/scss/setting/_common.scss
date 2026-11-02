@@ -75,3 +75,15 @@ main {
 // //         }
 // //     }
 // // }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #ffdf44;
+  outline-offset: 4px;
+}
+
+// Overlap background edges by one pixel to avoid subpixel hairlines on resize.
+#main > section + section,
+#footer {
+  margin-top: -1px;
+}

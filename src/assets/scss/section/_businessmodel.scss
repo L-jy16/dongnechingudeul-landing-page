@@ -1,20 +1,88 @@
 /** @format */
 
 #businessmodel {
+  @include continuous-scene(#efeef5, #7db7fe);
+  --scene-image: url(../../image/BusinessModelBackGround.png);
+  --scene-position: top center;
+  --scene-size: cover;
   width: 100%;
-  height: 111.94vh;
-  background-image: url(../../image/BusinessModelBackGround.png);
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  padding: 5%;
+  padding: var(--section-space) 5%;
 
   .title {
-    width: 30%;
-    margin-bottom: -2rem;
+    display: block;
+    width: clamp(320px, 42vw, 620px);
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 36px;
   }
+  .content { display: block; width: 100%; max-width: var(--section-width); height: auto; margin: 0 auto; }
+  .business-benefits { display: none; }
+}
 
-  .content {
-    width: 100%;
+@media (max-width: 800px) {
+  #businessmodel {
+    .title { width: min(100%, 620px); margin-bottom: 28px; }
+    .content { display: none; }
+
+    .business-benefits {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+
+      li {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 28%) minmax(0, 1fr);
+        align-items: center;
+        gap: 20px;
+        min-width: 0;
+        min-height: 132px;
+        padding: 18px;
+        border: 2px solid #b1dfff;
+        border-radius: 26px;
+        background: radial-gradient(ellipse at 10% 100%, #ffffffd9, transparent 55%), linear-gradient(135deg, #faffff, #deefff);
+        box-shadow: inset 0 0 0 2px #ffffffc9, 0 5px 10px #419ee82b;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 20px;
+          bottom: 20px;
+          left: 32%;
+          width: 2px;
+          border-radius: 2px;
+          background: #b4d9ff;
+        }
+        &:nth-child(even) {
+          border-color: #ffe4a0;
+          background: radial-gradient(ellipse at 95% 100%, #ffffffed, transparent 55%), linear-gradient(135deg, #fffef3, #fff5d3);
+          box-shadow: inset 0 0 0 2px #ffffffe0, 0 5px 10px #e7bd5a24;
+          &::before { background: #dedfcc; }
+        }
+      }
+
+      .benefit-icon {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        background-image: url(../../image/businessmodel-icons-v2.png);
+        background-size: 300% 200%;
+        background-repeat: no-repeat;
+      }
+      .benefit-copy { min-width: 0; }
+      h3 { margin: 0 0 8px; color: var(--font_color4); font-family: var(--mainSub-font); font-size: clamp(17px, 4.4vw, 23px); line-height: 1.4; letter-spacing: -0.035em; word-break: keep-all; }
+      p { color: #34588c; font-family: var(--mainSub-font2); font-size: clamp(15px, 3.8vw, 18px); font-weight: 600; line-height: 1.55; word-break: keep-all; }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  #businessmodel .business-benefits {
+    li { padding: 14px 12px; column-gap: 16px; }
+    h3 { font-size: 17px; }
   }
 }

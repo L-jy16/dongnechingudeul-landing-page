@@ -22,3 +22,32 @@
     -webkit-line-clamp: $num;
     -webkit-box-orient: vertical;
 }
+
+// Fade only the artwork into shared edge colors; foreground content stays opaque.
+@mixin continuous-scene($start, $end) {
+  position: relative;
+  isolation: isolate;
+  --scene-fade: clamp(48px, 7vw, 120px);
+  background: linear-gradient(to bottom, $start, $end);
+  // Cover fractional-pixel seams between adjacent section backgrounds.
+  box-shadow: 0 1px 0 $end;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: var(--scene-image);
+    background-position: var(--scene-position, top center);
+    background-size: var(--scene-size, cover);
+    background-repeat: no-repeat;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black var(--scene-fade),
+      black calc(100% - var(--scene-fade)),
+      transparent
+    );
+  }
+}

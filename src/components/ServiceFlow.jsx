@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import card01 from "../assets/image/Serviceflow_Card_Icon01.png";
 import card02 from "../assets/image/Serviceflow_Card_Icon02.png";
 import card03 from "../assets/image/Serviceflow_Card_Icon03.png";
@@ -9,131 +9,80 @@ import card05 from "../assets/image/Serviceflow_Card_Icon05.png";
 import road from "../assets/image/StepBackGround.png";
 import character from "../assets/image/WalkCharacter.png";
 
+const steps = [
+  { icon: card01, title: "AI 굿즈 탐색", lines: ["좋아하는 작품으로", "원하는 굿즈를 찾아요."] },
+  { icon: card02, title: "주변 굿즈샵 발견", lines: ["내 주변 굿즈샵을", "지도로 한눈에"] },
+  { icon: card03, title: "AR 동네 탐험", lines: ["AR로 발견하는", "숨은 굿즈의 스팟"] },
+  { icon: card04, title: "방문 이벤트", lines: ["가면 더 즐거운", "현장 이벤트"] },
+  { icon: card05, title: "구매·수집·교환", lines: ["구매하고, 모으고,", "팬들과 교류해요."] },
+];
+
 const ServiceFlow = () => {
-  const [characterPosition, setCharacterPosition] = useState(10);
+  const [activeStep, setActiveStep] = useState(0);
+  const listRef = useRef(null);
+  const [track, setTrack] = useState({ top: 0, bottom: 0, current: 0 });
 
-  const positions = {
-    1: 10,
-    2: 30,
-    3: 50,
-    4: 70,
-    5: 90,
-  };
-
-  const moveCharacter = (step) => {
-    setCharacterPosition(positions[step]);
-  };
+  useLayoutEffect(() => {
+    const list = listRef.current;
+    if (!list) return;
+    const measureTrack = () => {
+      const origin = list.getBoundingClientRect().top;
+      const centers = [...list.querySelectorAll(".card")].map((card) => {
+        const bounds = card.getBoundingClientRect();
+        return bounds.top - origin + bounds.height / 2;
+      });
+      setTrack({ top: centers[0], bottom: centers[centers.length - 1], current: centers[activeStep] });
+    };
+    measureTrack();
+    const observer = new ResizeObserver(measureTrack);
+    observer.observe(list);
+    return () => observer.disconnect();
+  }, [activeStep]);
 
   return (
     <section id="serviceflow">
       <div className="serviceflow__wrap">
-        <span className="shooting-star" />
+        <span className="shooting-star" aria-hidden="true" />
         <h2>
-          <strong>검색</strong>부터 <strong>방문</strong>까지,
-          <strong className="color">우리동네 오타쿠</strong>에서
+          <span className="heading-line"><strong>검색</strong>부터 <strong>방문</strong>까지,</span>{" "}
+          <span className="heading-line"><strong className="color">우리동네 오타쿠</strong>에서</span>
         </h2>
 
-        <div className="list__wrap">
+        <div
+          className="list__wrap"
+          ref={listRef}
+          style={{ "--track-top": `${track.top}px`, "--track-bottom": `${track.bottom}px`, "--step-y": `${track.current}px` }}
+        >
+          <div className="mobile-progress" aria-hidden="true">
+            <span className="mobile-progress__line" />
+            <img className="mobile-progress__chick" src={character} alt="" />
+          </div>
           <ul>
-            <li>
-              <button
-                className="card card01"
-                onMouseEnter={() => moveCharacter(1)}
-              >
-                <span className="number">01</span>
-                <div className="title__wrap">
-                  <img src={card01} alt="아이콘" />
-                  <h3>AI 굿즈 탐색</h3>
-                </div>
-                <div className="desc">
-                  좋아하는 작픔으로
-                  <br />
-                  원하는 굿즈를 찾아요.
-                </div>
-              </button>
-            </li>
-            <li>
-              <button
-                className="card card02"
-                onMouseEnter={() => moveCharacter(2)}
-              >
-                <span className="number">02</span>
-                <div className="title__wrap">
-                  <img src={card02} alt="아이콘" />
-                  <h3>주변 굿즈샵 발견</h3>
-                </div>
-                <div className="desc">
-                  내 주변 굿즈샵을
-                  <br />
-                  지도로 한눈에
-                </div>
-              </button>
-            </li>
-            <li>
-              <button
-                className="card card03"
-                onMouseEnter={() => moveCharacter(3)}
-              >
-                <span className="number">03</span>
-                <div className="title__wrap">
-                  <img src={card03} alt="아이콘" />
-                  <h3>AI 동네 탐험</h3>
-                </div>
-                <div className="desc">
-                  AR로 발견하는
-                  <br />
-                  숨은 굿즈의 스팟
-                </div>
-              </button>
-            </li>
-            <li>
-              <button
-                className="card card04"
-                onMouseEnter={() => moveCharacter(4)}
-              >
-                <span className="number">04</span>
-                <div className="title__wrap">
-                  <img src={card04} alt="아이콘" />
-                  <h3>방문 이벤트</h3>
-                </div>
-                <div className="desc">
-                  가면 더 즐거운
-                  <br />
-                  현장 이벤트
-                </div>
-              </button>
-            </li>
-            <li>
-              <button
-                className="card card05"
-                onMouseEnter={() => moveCharacter(5)}
-              >
-                <span className="number">05</span>
-                <div className="title__wrap">
-                  <img src={card05} alt="아이콘" />
-                  <h3>구매·수집·교환</h3>
-                </div>
-                <div className="desc">
-                  구매하고, 모으고,
-                  <br />
-                  팬들과 교류해요.
-                </div>
-              </button>
-            </li>
+            {steps.map((step, index) => (
+              <li key={step.title}>
+                <button
+                  type="button"
+                  className={`card card0${index + 1}`}
+                  aria-pressed={activeStep === index}
+                  onMouseEnter={() => setActiveStep(index)}
+                  onFocus={() => setActiveStep(index)}
+                  onClick={() => setActiveStep(index)}
+                >
+                  <span className="number">{String(index + 1).padStart(2, "0")}</span>
+                  <div className="title__wrap">
+                    <img src={step.icon} alt="" />
+                    <h3>{step.title}</h3>
+                  </div>
+                  <div className="desc">{step.lines[0]}<br />{step.lines[1]}</div>
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="walk__character">
-          <div className="background">
-            <img src={road} alt="걷는 길 " />
-          </div>
-
-          <div
-            className="character"
-            style={{
-              left: `${characterPosition}%`,
-            }}
-          >
-            <img src={character} alt="걷는 병아리" />
+          <div className="background"><img src={road} alt="" /></div>
+          <div className="character" style={{ left: `${10 + activeStep * 20}%` }}>
+            <img src={character} alt="선택한 단계를 따라 걷는 병아리" />
           </div>
         </div>
       </div>
