@@ -66,5 +66,41 @@
         }
       }
     }
+    .header__menu__mobile {
+      width: 3.4rem;
+      height: 3.4rem;
+      cursor: pointer;
+      display: none;
+
+      span {
+        display: block;
+        width: 40px;
+        height: 2px;
+        background-color: var(--white);
+        margin-top: 19px;
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 40px;
+          height: 2px;
+          background-color: var(--white);
+          position: absolute;
+          right: 0;
+          top: 6px;
+          transition: width 0.3s;
+        }
+        &::after {
+          content: "";
+          width: 40px;
+          height: 2px;
+          background-color: var(--white);
+          position: absolute;
+          left: 0;
+          bottom: 6px;
+          transition: width 0.3s;
+        }
+      }
+    }
   }
 }

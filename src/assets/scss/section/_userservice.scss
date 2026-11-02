@@ -251,3 +251,365 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  #userservice {
+    height: auto;
+    min-height: 100vh;
+    padding: 5% 4% 8%;
+
+    .userservice__wrap {
+      margin-top: 12%;
+
+      h2 {
+        // width: 14rem;
+        // margin-bottom: 1rem;
+      }
+
+      .userservice__content__wrap {
+        .btn__wrap {
+          gap: 1%;
+
+          button {
+            width: 32%;
+            height: 4.5rem;
+            font-size: 1.5rem;
+
+            span {
+              width: 2.8rem;
+              height: 2.8rem;
+            }
+          }
+        }
+
+        .slider__wrap {
+          .img__wrap {
+            padding: 0.8rem;
+
+            .slider__wrap {
+              top: 15%;
+              left: 9%;
+
+              .icon {
+                width: 12%;
+              }
+
+              .text__wrap {
+                h3 {
+                  font-size: 2rem;
+                }
+
+                span {
+                  font-size: 0.95rem;
+                }
+              }
+            }
+
+            img {
+              width: 92%;
+
+              &.slider {
+                width: 92%;
+              }
+
+              &.step {
+                width: 88%;
+                margin-top: 1.5rem;
+              }
+            }
+          }
+
+          .userservice-prev,
+          .userservice-next {
+            width: 3.8rem;
+            height: 3.8rem;
+            top: 32%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  #userservice {
+    height: auto;
+    min-height: 100vh;
+
+    padding: 6% 4% 10%;
+
+    background-size: cover;
+    background-position: 70% center;
+
+    .userservice__wrap {
+      margin-top: 10%;
+
+      h2 {
+        // width: 12rem;
+        // height: 3rem;
+        // margin-bottom: 1rem;
+
+        // span {
+        //   width: 2.8rem;
+        //   height: 2.5rem;
+        // }
+      }
+
+      .userservice__content__wrap {
+        .btn__wrap {
+          width: 100%;
+          gap: 0.7rem;
+
+          button {
+            width: calc(33.333% - 0.5rem);
+            height: 4rem;
+
+            font-size: 1.2rem;
+
+            span {
+              width: 2.4rem;
+              height: 2.4rem;
+            }
+          }
+        }
+
+        .slider__wrap {
+          margin-top: 0.5rem;
+
+          .img__wrap {
+            width: 100%;
+            padding: 0.5rem;
+
+            .slider__wrap {
+              top: 14%;
+              left: 8%;
+
+              width: 65%;
+
+              .icon {
+                width: 15%;
+                flex-shrink: 0;
+              }
+
+              .text__wrap {
+                h3 {
+                  font-size: 1.7rem;
+                  line-height: 1.25;
+                }
+
+                span {
+                  display: block;
+                  font-size: 0.85rem;
+                  line-height: 1.5;
+                }
+              }
+            }
+
+            img {
+              width: 95%;
+
+              &.slider {
+                width: 95%;
+              }
+
+              &.step {
+                width: 92%;
+                margin-top: 1.2rem;
+              }
+            }
+          }
+
+          .userservice-prev,
+          .userservice-next {
+            width: 3rem;
+            height: 3rem;
+
+            top: 31%;
+          }
+
+          .userservice-prev {
+            left: -0.5rem;
+          }
+
+          .userservice-next {
+            right: -0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  #userservice {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+
+    padding: 3rem 1rem 5rem;
+
+    background-size: cover;
+    background-position: top center;
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 12rem;
+
+      background: linear-gradient(
+        to bottom,
+        rgba(247, 198, 170, 0.35) 0%,
+        rgba(247, 210, 190, 0.18) 35%,
+        rgba(255, 255, 255, 0) 100%
+      );
+
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .userservice__wrap {
+      position: relative;
+      z-index: 1;
+      margin-top: 14%;
+    }
+
+    .userservice__wrap {
+      width: 100%;
+      margin-top: 0;
+
+      h2 {
+        width: 13rem;
+        height: 2.8rem;
+
+        margin-bottom: 1rem;
+
+        // background-position: left center;
+
+        span {
+          width: 2.2rem;
+          height: 2.2rem;
+        }
+      }
+
+      .userservice__content__wrap {
+        .btn__wrap {
+          width: 100%;
+
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+
+          gap: 0.4rem;
+
+          button {
+            width: 70%;
+            min-width: 18rem;
+            height: 4rem;
+            font-size: 1.3rem;
+
+            background-size: 100% 100%;
+
+            span {
+              width: 2rem;
+              height: 2rem;
+              margin-right: 0.5rem;
+            }
+
+            &:hover {
+              transform: none;
+            }
+          }
+        }
+
+        .slider__wrap {
+          width: 100%;
+          margin-top: 1rem;
+
+          .userserviceSwiper {
+            width: 100%;
+          }
+
+          .img__wrap {
+            width: 100%;
+            padding: 0;
+
+            /* 슬라이더 위 글씨 */
+            .slider__wrap {
+              top: 10%;
+              left: 7%;
+
+              width: 60%;
+
+              align-items: flex-start;
+
+              .icon {
+                width: 18%;
+                margin-right: 0.3rem;
+              }
+
+              .text__wrap {
+                h3 {
+                  font-size: 1.25rem;
+                  line-height: 1.25;
+
+                  text-shadow: -1px -1px 0 #4285e8, 1px -1px 0 #4285e8,
+                    -1px 1px 0 #4285e8, 1px 1px 0 #4285e8,
+                    0 2px 3px rgba(20, 95, 210, 0.6);
+                }
+
+                span {
+                  display: block;
+
+                  margin-top: 0.3rem;
+
+                  font-size: 0.65rem;
+                  line-height: 1.4;
+
+                  text-shadow: -1px -1px 0 #4285e8, 1px -1px 0 #4285e8,
+                    -1px 1px 0 #4285e8, 1px 1px 0 #4285e8;
+                }
+              }
+            }
+
+            /* 메인 슬라이드 */
+            img {
+              width: 100%;
+
+              &.slider {
+                width: 100%;
+              }
+
+              /* STEP 이미지 */
+              &.step {
+                width: 100%;
+                margin-top: 1.5rem;
+              }
+            }
+          }
+
+          .userservice-prev,
+          .userservice-next {
+            display: none;
+            // width: 2.5rem;
+            // height: 2.5rem;
+
+            // top: 25%;
+          }
+
+          // .userservice-prev {
+          //   left: -0.8rem;
+          // }
+
+          // .userservice-next {
+          //   right: -0.8rem;
+          // }
+        }
+      }
+    }
+  }
+}

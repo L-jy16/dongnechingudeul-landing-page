@@ -1,0 +1,172 @@
+// Keep desktop artwork intact; mobile hero follows the supplied 1080px layout.
+a:focus-visible, button:focus-visible {
+  outline: 3px solid #ffdf44;
+  outline-offset: 4px;
+}
+
+@media (min-width: 801px) and (max-width: 1200px) {
+  #header .header__inner .header__menu ul { width: 85%; }
+  #banner .banner__content {
+    left: 6%;
+    .title { font-size: clamp(2.5rem, 4.5vw, 4rem); }
+  }
+}
+
+@media (max-width: 800px) {
+  #header {
+    position: relative;
+    background: #000;
+    .header__inner {
+      height: auto;
+      padding: 6vw 8% 1.7vw;
+      flex-direction: column;
+      gap: 2vw;
+      .header__logo { width: 40%; height: 17vw;
+        .Logo_img { height: 100%; object-fit: contain; }
+      }
+      .header__menu {
+        width: 100%;
+        height: auto;
+        ul {
+          width: 100%;
+          margin: 0;
+          gap: 1vw;
+          li .menu {
+            display: flex;
+            align-items: center;
+            min-height: 44px;
+            font-size: clamp(12px, 3vw, 24px);
+            white-space: nowrap;
+            &[aria-current] { color: #ffe83b; }
+          }
+        }
+      }
+    }
+  }
+
+  #banner {
+    height: 143.61vw;
+    background-image: url(../../image/BannerBackGround2.png);
+    background-size: 100% auto;
+    background-position: center bottom;
+    .banner__content {
+      inset: 5vw 11% 15vw;
+      justify-content: space-between;
+      align-items: stretch;
+      .title {
+        margin: 0;
+        font-size: 6.9vw;
+        line-height: 1.2;
+        letter-spacing: -0.03em;
+        -webkit-text-stroke: 1px #151515;
+        paint-order: stroke fill;
+        text-shadow: 0 2px 0 #151515;
+      }
+      .btn__wrap {
+        width: 100%;
+        gap: 2.5vw;
+        .start__btn__wrap {
+          width: 100%;
+          gap: 2vw;
+          .goods, .shop {
+            width: calc(50% - 1vw);
+            min-width: 0;
+            height: 10.7vw;
+            padding: 1vw 1.5vw;
+            background-size: 100% 100%;
+            img { width: 5.2vw; margin-right: 1.3vw; }
+            span { font-size: 2.6vw; white-space: nowrap; padding: 0; }
+          }
+        }
+        .download__btn__wrap {
+          gap: 1.5vw;
+          button {
+            width: 21vw;
+            height: 5.8vw;
+            background-size: contain;
+          }
+        }
+      }
+    }
+  }
+
+  #userservice {
+    position: relative;
+    min-height: 0;
+    .userservice__wrap .userservice__content__wrap .btn__wrap button {
+      min-width: 0;
+      max-width: 100%;
+    }
+  }
+
+  #serviceflow, #promotion, #ownerservice, #businessmodel, #footer {
+    height: auto;
+    padding: 48px 5%;
+  }
+  #serviceflow .serviceflow__wrap {
+    width: 100%;
+    .shooting-star { width: 40%; left: 50%; top: -3rem; }
+    h2 {
+      font-size: clamp(1.4rem, 4vw, 2.3rem);
+      margin-bottom: 24px;
+      strong { font-size: inherit; }
+    }
+    .list__wrap ul {
+      justify-content: center;
+      gap: 12px;
+      li {
+        width: calc(50% - 6px);
+        max-width: 250px;
+        .card {
+          height: 13rem;
+          .title__wrap h3 { font-size: 1rem; }
+          .desc { font-size: 1rem; }
+        }
+      }
+    }
+  }
+  #serviceflow .walk__character {
+    height: 7rem;
+    .background { bottom: -1rem; }
+    .character { width: 5rem; bottom: 0; }
+  }
+  #promotion {
+    h3 { padding: 0; margin: 0 0 24px; font-size: clamp(1.5rem, 4.5vw, 2.5rem); }
+    .video__wrap {
+      height: auto;
+      margin: 0;
+      gap: 24px;
+      .video { width: 100%; height: auto; aspect-ratio: 4 / 3; }
+      .list {
+        width: 100%;
+        ul li {
+          max-width: 400px;
+          margin: 0 auto 12px;
+          background-size: 100% 100%;
+          .title { padding-top: 12px; }
+        }
+      }
+    }
+  }
+  #ownerservice {
+    .text__wrap {
+      .title {
+        h3 { font-size: clamp(1.4rem, 4.5vw, 2.5rem); }
+        .staricon { width: 4rem; height: 4rem; flex-shrink: 0; }
+      }
+      .desc { font-size: 1rem; margin: 16px 0 24px; }
+    }
+    .img__wrap { gap: 20px; img { width: 100%; } }
+  }
+  #businessmodel {
+    .title { width: 65%; margin-bottom: 12px; }
+    .content { width: 100%; }
+  }
+  #footer {
+    min-height: 340px;
+    img { width: min(65%, 22rem); }
+    .footer__menu { flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+    .footer__copyright { font-size: 0.85rem; overflow-wrap: anywhere; }
+    .footer__line { width: 90%; }
+  }
+}

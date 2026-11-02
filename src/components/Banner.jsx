@@ -28,8 +28,8 @@ const Banner = () => {
           </div>
 
           <div className="download__btn__wrap">
-            <button className="apple"></button>
-            <button className="google"></button>
+            <button className="apple" aria-label="App Store에서 사전 등록"></button>
+            <button className="google" aria-label="Google Play에서 사전 등록"></button>
           </div>
         </div>
       </div>

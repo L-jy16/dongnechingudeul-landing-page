@@ -3,6 +3,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { headerNav } from "../constants/index";
+
 import logo from "../assets/image/Logo.png";
 
 const Header = (props) => {
@@ -14,40 +16,17 @@ const Header = (props) => {
             <img className="Logo_img" src={logo} alt="로고" />
           </Link>
         </div>
-        <div className="header__menu">
+        <nav className="header__menu" aria-label="주 메뉴">
           <ul>
-            <li>
-              <a className="menu" href="#banner">
-                홈
-              </a>
-            </li>
-            {/* <li>
-              <a  className="menu"  href="#banner">
-                소개
-              </a>
-            </li> */}
-            <li>
-              <a className="menu" href="#userservice">
-                이용 방법
-              </a>
-            </li>
-            <li>
-              <a className="menu" href="#promotion">
-                스토리
-              </a>
-            </li>
-            <li>
-              <a className="menu" href="#ownerservice">
-                굿즈샵
-              </a>
-            </li>
-            <li>
-              <a className="menu" href="#businessmodel">
-                덕질 라이프
-              </a>
-            </li>
+            {headerNav.map((nav, key) => (
+              <li key={key}>
+                <a className="menu" href={nav.url} aria-current={nav.url === "#banner" ? "page" : undefined}>
+                  {nav.title}
+                </a>
+              </li>
+            ))}
           </ul>
-        </div>
+        </nav>
       </div>
     </header>
   );
